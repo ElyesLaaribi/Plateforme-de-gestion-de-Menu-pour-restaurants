@@ -4,3 +4,4 @@ foodie
 1. categories (cat_id, cat_title)
 2. products (id, title, qty, image, price, discount_price, descriptio=NULL, status=true/false, 
 cartegory_id)
+TEST
