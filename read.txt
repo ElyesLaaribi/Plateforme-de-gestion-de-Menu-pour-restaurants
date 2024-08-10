@@ -8,8 +8,3 @@ cartegory_id)
 Master
 
 hello 
-=======
-Main
-
-Hello
->>>>>>> main

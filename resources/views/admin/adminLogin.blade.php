@@ -12,13 +12,7 @@
 <body>
     <div class="navbar navbar-expend-lg navbar-dark bg-dark">
         <div class="container">
-<<<<<<< HEAD
-            <a href="" class="navbar-brand">ADMIN PANEL | </a>
-=======
             <a href="" class="navbar-brand">ADMIN PANEL | Foodie</a>
->>>>>>> main
-
-
         </div>
     </div>
 
