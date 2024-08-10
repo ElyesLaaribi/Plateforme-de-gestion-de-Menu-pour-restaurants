@@ -12,7 +12,7 @@
 <body>
     <div class="navbar navbar-expend-lg navbar-dark bg-dark">
         <div class="container">
-            <a href="" class="navbar-brand">ADMIN PANEL | {{env("APP_NAME")}}</a>
+            <a href="" class="navbar-brand">ADMIN PANEL | Foodie</a>
 
 
         </div>
