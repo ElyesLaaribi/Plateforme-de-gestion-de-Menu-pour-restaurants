@@ -32,7 +32,7 @@
                         <form action="" method="post">
                             @csrf
                             <div class="mb-3">
-                                <label for="">Email</label>
+                                <label for="">Name</label>
                                 <input type="email" name="email" value="{{old('email')}}" class="form-control">
                                 @error('email')
                                     <p class="small text-danger">{{$message}}</p>
