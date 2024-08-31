@@ -13,6 +13,7 @@ use App\Http\Controllers\FeedbackController;
 Route::get('/', [HomeController::class, 'index'])->name('home.index');
 Route::match(["get", "post"], "/login", [HomeController::class, "login"])->name("login");
 Route::match(["get", "post"], "/admin/login", [AdminController::class, "login"])->name("adminlogin");
+// Route::match(["get", "post"], "/admin/register", [AdminController::class, "register"])->name("adminlogin");
 Route::get("/admin/logout", [AdminController::class, "logout"])->name("adminLogout");
 
 // feedback routes
