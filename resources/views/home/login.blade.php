@@ -1,26 +1,6 @@
-<!DOCTYPE html>
-<html lang="en">
+@extends('home.base')
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ADMIN PANEL - Foodie - Taste Better</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-</head>
-
-<body>
-    <div class="navbar navbar-expand-lg navbar-dark bg-primary">
-        <div class="container">
-            <a href="" class="navbar-brand ">Foodie Menu</a>
-
-            <div class="navbar-nav nav">
-                <a href="" class="nav-link nav-item">Home</a>
-            </div>
-        </div>
-    </div>
-
-
+@section('content')
 
 
     <div class="container">
@@ -46,7 +26,7 @@
                                 @enderror
                             </div>
                             <div class="mb-3">
-                                <input type="submit" value="Admin Login" class="btn btn-success w-100">
+                                <input type="submit" value="Login" class="btn btn-success w-100">
 
                             </div>
                         </form>
@@ -59,6 +39,4 @@
         </div>
     </div>
 
-</body>
-
-</html>
+@endsection

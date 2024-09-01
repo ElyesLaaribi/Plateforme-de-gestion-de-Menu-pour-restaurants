@@ -15,7 +15,24 @@ class HomeController extends Controller
         return view('home.home', $data);
     }
 
-    public function login(){
+    public function login()
+    {
         return view("home.login");
+    }
+    
+    public function signup(Request $request)
+    {
+        if ($request->isMethod("post"))
+        {
+            $data = $request->validate
+            ([
+                "email" => "required",
+                "password" => "required",
+                "name" => "required"
+            ]);
+    
+            dd($data);
+        }
+        return view("home/signup");
     }
 }
