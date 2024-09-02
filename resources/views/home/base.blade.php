@@ -16,9 +16,17 @@
             <a href="" class="navbar-brand ">Foodie Menu</a>
 
             <div class="navbar-nav nav">
-                <a href="" class="nav-link nav-item">Home</a>
-                <a href="{{route('signup')}}" class="nav-link nav-item">Signup</a>
-                <a href="{{route('login')}}" class="nav-link nav-item">Login</a>
+                <a href="{{route("home.index")}}" class="nav-link nav-item">Home</a>
+
+                @auth
+                    <a href="" class="nav-link nav-item text-capitalize text-white">{{auth()->user()->name}}</a>
+                    <a href="{{route('logout')}}" class="nav-link nav-item">Logout</a>
+                @endauth
+
+                @guest
+                    <a href="{{route('signup')}}" class="nav-link nav-item">Signup</a>
+                    <a href="{{route('login')}}" class="nav-link nav-item">Login</a>
+                @endguest
             </div>
         </div>
     </div>

@@ -10,11 +10,12 @@ use App\Http\Controllers\FeedbackController;
 
 
 // home routes
-Route::get('/', [HomeController::class, 'index'])->name('home.index');
-Route::match(["get", "post"], "/login", [HomeController::class, "login"])->name("login");
-Route::match(["get", "post"], "/signup", [HomeController::class, "signup"])->name("signup");
-Route::match(["get", "post"], "/admin/login", [AdminController::class, "login"])->name("adminlogin");
-Route::get("/admin/logout", [AdminController::class, "logout"])->name("adminLogout");
+Route::controller(HomeController::class)->group(function () {
+    Route::get('/', 'index')->name('home.index');
+    Route::match(["get", "post"], "/login", "login")->name("login");
+    Route::match(["get", "post"], "/signup", "signup")->name("signup");
+    Route::get("/logout", "logout")->name("logout");
+});
 
 // feedback routes
 Route::post('/feedback', [FeedbackController::class, 'store'])->name('feedback.submit');
@@ -23,11 +24,16 @@ Route::get('/feedback/{id}/edit', [FeedbackController::class, 'edit'])->name('fe
 Route::put('/feedback/{id}', [FeedbackController::class, 'update'])->name('feedback.update')->middleware('admin');
 
 // admin routes
-Route::middleware("auth:admin")->group(function () {
+
+Route::prefix("admin")->group(function () {
 
 
-    Route::prefix("admin")->group(function () {
+    Route::match(["get", "post"], "/admin/login", [AdminController::class, "login"])->name("adminlogin");
+    Route::get("/admin/logout", [AdminController::class, "logout"])->name("adminLogout");
+
+    Route::middleware("auth:admin")->group(function () {
         Route::get("/", [AdminController::class, "dashboard"])->name("admin.dashboard");
+
         Route::controller(CategoryController::class)->group(function () {
             Route::prefix("category")->group(function () {
                 Route::match(["get", "post"], "/", "manageCategory")->name("admin.category");

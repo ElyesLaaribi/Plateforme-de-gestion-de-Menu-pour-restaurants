@@ -35,9 +35,10 @@
 
                         </div>
                     </form>
-                    @if (session('msg'))
-                        <div class="alert alert-danger">{{session('msg')}}</div>
-                    @endif
+                    <div class="row">
+                        <a href="{{route('login')}}">Already have an Account</a>
+                    </div>
+                   
                 </div>
             </div>
         </div>
