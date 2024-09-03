@@ -27,9 +27,9 @@ Route::put('/feedback/{id}', [FeedbackController::class, 'update'])->name('feedb
 
 Route::prefix("admin")->group(function () {
 
-
     Route::match(["get", "post"], "/admin/login", [AdminController::class, "login"])->name("adminlogin");
     Route::get("/admin/logout", [AdminController::class, "logout"])->name("adminLogout");
+
 
     Route::middleware("auth:admin")->group(function () {
         Route::get("/", [AdminController::class, "dashboard"])->name("admin.dashboard");

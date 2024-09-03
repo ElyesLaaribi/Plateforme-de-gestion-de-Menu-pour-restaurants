@@ -9,9 +9,7 @@
             <div class="card">
                 <div class="card-header">Login here</div>
                 <div class="card-body">
-                    @if (session('msg'))
-                        <div class="alert alert-danger">{{session('msg')}}</div>
-                    @endif
+                   
                     <form action="" method="post">
                         @csrf
                         <div class="mb-3">

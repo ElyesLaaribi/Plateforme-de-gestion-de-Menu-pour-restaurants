@@ -26,9 +26,9 @@ class HomeController extends Controller
             ]);
 
             if (Auth::attempt($data)) {
-                return redirect()->route("home.index");
+                return redirect()->route("home.index")->with("success", "Login Successfully");
             } else {
-                return redirect()->back()->with("msg", "email or password invalid");
+                return redirect()->back()->with("error", "email or password invalid");
             }
         }
         return view("home.login");
