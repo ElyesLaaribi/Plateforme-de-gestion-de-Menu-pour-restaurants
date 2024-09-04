@@ -24,6 +24,7 @@
 
             <div class="navbar-nav nav">
                 <a href="{{route("home.index")}}" class="nav-link nav-item">Home</a>
+                <a href="{{route("home.index")}}" class="nav-link nav-item">Home</a>
 
                 @auth
                     <a href="" class="nav-link nav-item text-capitalize text-white">{{auth()->user()->name}}</a>
