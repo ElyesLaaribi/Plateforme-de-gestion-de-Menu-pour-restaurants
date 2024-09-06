@@ -33,6 +33,7 @@
                     </form>
                     <div class="row">
                         <a href="{{route('signup')}}">Yet not Registered</a>
+                        <a href="{{route('signup')}}">are u sure</a>
                     </div>
                     
                 </div>
