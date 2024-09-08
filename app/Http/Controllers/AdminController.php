@@ -30,10 +30,10 @@ class AdminController extends Controller
             ]);
 
             if(Auth::guard('admin')->attempt($data)){
-                return redirect()->route("admin.dashboard");
+                return redirect()->route("admin.dashboard")->with("success", "Admin Login Successfully");
             }
             else{
-                return back()->with("msg","username or password is incorrect");
+                return back()->with("error","username or password is incorrect");
             }
         }
         return view("admin.adminLogin");
@@ -41,6 +41,6 @@ class AdminController extends Controller
     
     public function logout(Request $req){
         Auth::guard("admin")->logout();
-        return redirect()->route("adminlogin");
+        return redirect()->route("adminlogin")->with("error", "Admin Logout Successfully");
     }
 }
