@@ -27,7 +27,7 @@ Route::put('/feedback/{id}', [FeedbackController::class, 'update'])->name('feedb
 
 Route::prefix("admin")->group(function () {
 
-    Route::match(["get", "post"], "/admin/login", [AdminController::class, "login"])->name("adminlogin");
+    Route::match(["get", "post"], "/login", [AdminController::class, "login"])->name("adminlogin");
     Route::get("/admin/logout", [AdminController::class, "logout"])->name("adminLogout");
 
 
